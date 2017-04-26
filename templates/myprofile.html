@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2017 by YifengGuo (http://jsbin.com/soquwoz/26/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <title>homepage</title>
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #434343;
+  color: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.top-header {
+  align-items: center;
+  background: #DF574B;
+  box-shadow: 0 2px 10px #333333;
+  display: flex; /* mobile friendly */
+  height: 60px;
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  
+}
+
+.navigator a {
+  color: #F9F9F9;
+  font-weight: 400;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navigator a:hover {
+  color:#18adf2;
+}
+
+.user-info {
+  float:right;
+  margin-top:70px;
+  margin-right:20px;
+}
+
+.username {
+  color: #FBAF41;
+}
+
+.logout {
+  color:#ffffff;
+}
+
+.logout:hover {
+  color:#19ade8;
+}
+
+.focused-stock-name {
+  color: #FBAF41;
+  font-size: 1.2em;
+
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.stock-chart {
+  padding-top:250px;
+  //margin-top: 30px;
+  margin-left: 60px;
+  width: 650px;
+  height: 350px;
+  border: solid 1px;
+}
+
+
+.functions-area {
+  padding-top:40px;
+}
+
+.functions-title {
+  color:#ea8383;
+  font-weight:bold;
+  font-size:1.4em;
+}
+
+.functions a{
+  line-height:25px;
+  color:#38c470;
+  list-style:none;
+  margin-left:20px;
+  text-decoration:none;
+  font-size:17px;
+}
+
+.functions a:hover {
+  color:#ef8c4f;
+}
+
+.footer {
+  margin-top:100px;
+  text-align: center;
+  margin-bottom:10px;
+}
+</style>
+</head>
+<body>
+  
+  <header class="top-header">
+      <nav class="navigator">
+      <a href="http://127.0.0.1:5000/home" class="main-btn">Home</a>
+      <a href="http://127.0.0.1:5000/myprofile" class="main-btn">Myprofile</a>
+      <a href="https://finance.yahoo.com/" class="main-btn">News</a>
+      <a href="http://127.0.0.1:5000/FAQ" class="main-btn">FAQ</a>
+    </nav>
+  </header>
+
+  <div class="user-info">
+    <form action="" method="post">
+      <p class="username">Username
+        <a href="" class="logout">
+          <i class="fa fa-sign-out" aria-hidden="true" onclick="logout()"></i>
+        </a>
+      </p>
+    </form>
+  </div>
+
+  <div class="focused-stock">
+    <p class="focused-stock-name">Focused Stock:{{stock}}</p>
+  </div>
+
+  <div id="stock-trend-chart" class="stock-chart">
+
+  </div>
+
+
+  
+  <div class="functions-area">
+    <ul class="functions">
+      <li>
+        <p class="functions-title">News & Investment Education</p>
+      </li>
+      <li>
+        <a href="https://www.yahoo.com/news/">Yahoo Finance News</a>
+      </li>
+      <li>
+        <a href="https://finance.yahoo.com/investing-news/">Market News</a>
+      </li>
+      <li>
+        <a href="https://www.stocktrader.com/free-education/">Free stock Market Education</a>
+      </li>
+      <li>
+        <a href="https://www.stocktrader.com/learn-stock-trading/">How To Learn Stock Trading As a new Investor</a>
+      </li>
+    </ul>
+  </div>
+  
+  <footer class="footer">
+    <div class="intro">
+    <p>Software Engineering Web Application</p></br>
+    <p>Group 3 presents</p>
+    </div>
+  </footer>
+
+<script type="application/javascript">
+  function logout() {
+      window.location.href = "http://127.0.0.1:5000/logout";
+  }
+</script>
+  
+</body>
+</html>
